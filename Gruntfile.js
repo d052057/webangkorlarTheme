@@ -11,19 +11,15 @@ const SWATCHES = [
 
 const BUILD_DIR = 'build/';
 const DIST_DIR = 'dist/';
-const DOCS_DEST = 'docs/5/';
 let buildTheme = '';
 
 module.exports = grunt => {
   grunt.loadNpmTasks('@lodder/grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-html');
 
   // Force use of Unix newlines
   grunt.util.linefeed = '\n';
@@ -73,39 +69,6 @@ module.exports = grunt => {
         src: [],
         dest: ''
       }
-    },
-    htmllint: {
-      options: {
-        ignore: [
-          /Attribute “autocomplete” is only allowed when the input type is.*/
-        ]
-      }
-    },
-    connect: {
-      options: {
-        hostname: 'localhost',
-        livereload: 35729,
-        port: 3000,
-        open: true
-      },
-      base: {
-        options: {
-          base: 'docs'
-        }
-      }
-    },
-    watch: {
-      options: {
-        livereload: '<%= connect.options.livereload %>',
-        spawn: false
-      },
-      dev: {
-        files: [
-          'dist/*/_variables.scss',
-          'dist/*/_webangkorlarTheme.scss'
-        ],
-        tasks: 'build'
-      }
     }
   });
 
@@ -139,7 +102,6 @@ module.exports = grunt => {
       dest: cssDest
     });
     grunt.config.set('copy.css.files.0.cwd', themeDir);
-    grunt.config.set('copy.css.files.0.dest', path.join(DOCS_DEST, theme));
     grunt.config.set('cssmin.dist', {
       src: cssDest,
       dest: cssDestMin
@@ -171,6 +133,4 @@ module.exports = grunt => {
   });
 
   grunt.registerTask('default', ['connect', 'watch']);
-  grunt.registerTask('vendor', 'copy:vendor');
-  grunt.registerTask('release', ['swatch', 'docs']);
 };
