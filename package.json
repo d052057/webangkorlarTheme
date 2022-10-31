@@ -1,0 +1,38 @@
+{
+  "name": "webangkorlartheme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "grunt swatch",
+    "htmllint": "grunt htmllint",
+    "stylelint": "stylelint \"dist/**/*.scss\" --rd",
+    "release": "grunt release",
+    "test": "npm run stylelint"
+  },
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "dist/**/*.{css,scss}"
+  ],
+  "devDependencies": {
+    "@lodder/grunt-postcss": "^3.1.1",
+    "autoprefixer": "^10.4.12",
+    "bootstrap": "^5.2.2",
+    "bootstrap-icons": "^1.9.1",
+    "grunt": "^1.5.3",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^2.0.0",
+    "grunt-contrib-connect": "^3.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-html": "^15.1.0",
+    "grunt-sass": "^3.1.0",
+    "postcss": "^8.4.18",
+    "prismjs": "^1.25.0",
+    "sass": "^1.55.0",
+    "stylelint": "^14.11.0",
+    "stylelint-config-twbs-bootstrap": "^3.0.0"
+  }
+}
