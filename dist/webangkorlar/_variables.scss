@@ -1,6 +1,21 @@
-// WebangkorlarTheme 5.2.2
+// WebFamilyTheme 5.3.3
+@use "sass:color";
+$theme: "webfamily" !default;
+/*colors =['#221924', '#004422', '#062751', '#F78914','#990000', '#708238', '#6a0dad','#ff9933'];*/
+$blue: #708238 !default; // Lewe Primary
+$orange: #ff9400 !default; // Lewe Primary Complementary
+$yellow: #ffc000 !default; // Lewe Secondary Complementary
+$form-range-thumb-bg: #ff9933;
+$form-range-track-bg: color.adjust(#ff9933, $lightness: 30%);
 
-$theme: "webangkorlar" !default;
+.btn-primary, .btn-secondary, .btn-success {
+    color: #ffffff !important;
+}
 
-
-$blue:    #23415c;
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+    color: #ffffff !important;
+}
