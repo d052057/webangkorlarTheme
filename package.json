@@ -1,7 +1,7 @@
 {
   "name": "webangkorlartheme",
   "description": "webangkorlartheme is a theme for Webangkorlar based on Bootstrap.",
-  "version": "5.3.8",
+  "version": "5.3.9",
   "license": "MIT",
   "scripts": {
     "build": "grunt swatch",
