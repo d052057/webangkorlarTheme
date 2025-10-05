@@ -1,14 +1,14 @@
 {
   "name": "webangkorlartheme",
   "description": "webangkorlartheme is a theme for Webangkorlar based on Bootstrap.",
-  "version": "5.2.2",
+  "version": "5.3.8",
   "license": "MIT",
   "scripts": {
     "build": "grunt swatch",
     "docs": "grunt docs",
     "htmllint": "grunt htmllint",
     "stylelint": "stylelint \"dist/**/*.scss\" --rd",
-    "release": "grunt release",
+    "release": "npm version patch && git push --follow-tags",
     "test": "npm run stylelint"
   },
   "files": [
